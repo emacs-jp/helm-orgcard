@@ -27,7 +27,7 @@
 
 ;; Put the helm-orgcard.el to your
 ;; load-path.
-;; Add to .emacs:
+;; Add to init.el:
 ;; (require 'helm-orgcard)
 ;;
 ;; Original version is anything-orgcard, and port to helm.
