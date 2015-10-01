@@ -1,4 +1,4 @@
-;;; helm-orgcard.el --- browse the orgcard by helm
+;;; helm-orgcard.el --- browse the orgcard by helm -*- lexical-binding: t -*-
 
 ;; Description: browse the orgcard by helm.
 ;; Author: Yuhei Maeda <yuhei.maeda_at_gmail.com>
@@ -8,7 +8,7 @@
 ;; Version: 0.1
 ;; Keywords: convenience, helm, org
 ;; URL: https://github.com/emacs-jp/helm-orgcard
-;; Package-Requires: ((helm "1.5.2"))
+;; Package-Requires: ((helm-core "1.7.7"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 
 ;; Put the helm-orgcard.el to your
 ;; load-path.
-;; Add to .emacs:
+;; Add to init.el:
 ;; (require 'helm-orgcard)
 ;;
 ;; Original version is anything-orgcard, and port to helm.
@@ -39,8 +39,16 @@
 
 (require 'helm)
 
-(defvar hoc-lang-selector 'en
-  "Select orgcard langage. English or Japanese.")
+(defgroup helm-orgcard nil
+  "Browse the orgcard by helm"
+  :group 'org)
+
+(defcustom hoc-lang-selector 'en
+  "Select orgcard language. English or Japanese."
+  :type '(choice
+          (const :tag "English" en)
+          (const :tag "Japanese" ja))
+  :group 'helm-orgcard)
 
 (defvar hoc-orgcard-url '((en  "http://orgmode.org/orgcard.txt")  
                            (ja  "http://orgmode.jp/orgcard-ja.txt"))
