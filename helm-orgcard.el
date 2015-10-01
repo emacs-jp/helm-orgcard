@@ -1,4 +1,4 @@
-;;; helm-orgcard.el --- browse the orgcard by helm
+;;; helm-orgcard.el --- browse the orgcard by helm -*- lexical-binding: t -*-
 
 ;; Description: browse the orgcard by helm.
 ;; Author: Yuhei Maeda <yuhei.maeda_at_gmail.com>
