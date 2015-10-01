@@ -8,7 +8,7 @@
 ;; Version: 0.1
 ;; Keywords: convenience, helm, org
 ;; URL: https://github.com/emacs-jp/helm-orgcard
-;; Package-Requires: ((helm "1.5.2"))
+;; Package-Requires: ((helm-core "1.7.7"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
