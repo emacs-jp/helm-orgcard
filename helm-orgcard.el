@@ -44,7 +44,7 @@
   :group 'org)
 
 (defcustom hoc-lang-selector 'en
-  "Select orgcard langage. English or Japanese."
+  "Select orgcard language. English or Japanese."
   :type '(choice
           (const :tag "English" en)
           (const :tag "Japanese" ja))
