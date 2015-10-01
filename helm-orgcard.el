@@ -3,9 +3,9 @@
 ;; Description: browse the orgcard by helm.
 ;; Author: Yuhei Maeda <yuhei.maeda_at_gmail.com>
 ;; Maintainer: Yuhei Maeda
-;; Copyright (C) 2013 Yuhei Maeda all rights reserved.
+;; Copyright (C) 2015 Yuhei Maeda all rights reserved.
 ;; Created: :2013-06-05
-;; Version: 0.1
+;; Version: 0.2
 ;; Keywords: convenience, helm, org
 ;; URL: https://github.com/emacs-jp/helm-orgcard
 ;; Package-Requires: ((helm-core "1.7.7"))
