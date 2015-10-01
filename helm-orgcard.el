@@ -32,7 +32,7 @@
 ;;
 ;; Original version is anything-orgcard, and port to helm.
 ;; https://gist.github.com/kiwanami/1345100
-;; 
+;;
 
 
 ;;; Code:
@@ -50,11 +50,11 @@
           (const :tag "Japanese" ja))
   :group 'helm-orgcard)
 
-(defvar hoc-orgcard-url '((en  "http://orgmode.org/orgcard.txt")  
+(defvar hoc-orgcard-url '((en  "http://orgmode.org/orgcard.txt")
                            (ja  "http://orgmode.jp/orgcard-ja.txt"))
   "URL to the orgcard.")
 
-(defvar hoc-orgcard-file '((en  "~/.emacs.d/orgcard.txt")  
+(defvar hoc-orgcard-file '((en  "~/.emacs.d/orgcard.txt")
                            (ja  "~/.emacs.d/orgcard.ja.txt"))
   "Path to the orgcard.")
 
@@ -67,7 +67,7 @@ function retrieves from the URL."
   (unless (file-exists-p file)
     (let ((buf (url-retrieve-synchronously url)))
       (when buf
-        (with-current-buffer buf 
+        (with-current-buffer buf
           (write-file file))
         (kill-buffer buf))))
   (unless (file-exists-p file)
@@ -81,9 +81,9 @@ function retrieves from the URL."
 
 (defun hoc-create-sources ()
   "[internal] create an helm source for orgcard."
-  (let (heads 
-        cur-title 
-        cur-subtitle 
+  (let (heads
+        cur-title
+        cur-subtitle
         cur-records
         (file (expand-file-name
                (cadr (assoc hoc-lang-selector hoc-orgcard-file)))))
@@ -91,16 +91,16 @@ function retrieves from the URL."
       (insert-file-contents file)
       (goto-char (point-min))
       (forward-line 4) ; skip title
-      (while 
+      (while
           (let ((line (hoc-readline)))
             (cond
              ((equal "" line) nil)     ; do nothing
              ((equal ?= (aref line 0)) ; header
               (when cur-title          ; flush records
-                (push 
+                (push
                  `((name . ,cur-title)
                    (candidates ,@cur-records)
-                   (action 
+                   (action
                     . (("Echo" . hoc-echo-action))))
                  heads))
               (forward-line 1)
@@ -116,7 +116,7 @@ function retrieves from the URL."
             (forward-line 1)
             (not (eobp)))))
     (when cur-title ; flush the last records
-      (push 
+      (push
        `((name . ,cur-title)
          (candidates ,cur-records)
          (action . (("Echo" . hoc-echo-action))))
